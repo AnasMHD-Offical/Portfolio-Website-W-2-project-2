@@ -4,7 +4,9 @@
 		<!-- Meta -->
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Anas Muhammed">
+		<meta name="description" content="Portfolio website of Anas Muhammed.A Web developer.">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<!-- SITE TITLE -->
 		<title>Anas Muhammed</title>
@@ -14,7 +16,6 @@
 		<link href="fonts/themify-icons.css" rel="stylesheet"/>
 		<link href="fonts/etline.css" rel="stylesheet"/>
 		<link href="css/plugins.css" rel="stylesheet"/>
-		<link href="css/lightbox.min.css" rel="stylesheet"/>
 		<link href="css/responsive.css" rel="stylesheet"/>
 		<link href="css/style.css" rel="stylesheet"/>
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -86,7 +87,7 @@
 						</div>
 						<div class="col-md-6 col-sm-12 col-xs-12">
 							<div class="banner-images">
-								<img src="images/photo_2024-07-01_20-15-24-removebg-preview-2.png" alt=""/>
+								<img src="images/Anas.webp" alt=""/>
 							</div>
 						</div>						
 					</div>
@@ -101,7 +102,7 @@
 						<div class="row">
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<div class="about_image wow fadeInLeft">
-									<img src="images/photo_2024-07-01_20-15-24-removebg-preview-2.png" alt="about-image" />
+									<img src="images/Anas.webp" alt="about-image" />
 								</div>
 							</div>
 							
@@ -151,7 +152,7 @@
 										</div>
 									</div>
 									
-									<a href="#" class="btn btn-default main_btn">Download Cv</a>
+									<a href="images/Resume-Anas-Muhammed.pdf" download="Resume-Anas-Muhammed" class="btn btn-default main_btn">Download Cv</a>
 								</div>
 							</div>
 						</div>
@@ -226,8 +227,8 @@
 									<img src="images/Ro1.webp" alt="" />
 									<div class="item-img-overlay">
 										<div class="overlay-info full-width">
-											<h5>Github</h5>
-											<a href="https://github.com/AnasMHD-Offical/BROTOTYPE-POJECT-2" target="_blank">
+											<h5>Github link</h5>
+											<a href="https://github.com/AnasMHD-Offical/BROTOTYPE-POJECT-2" target="_blank" title="Totto">
 												<span class="icon"><i class="ti-arrow-right"></i></span>
 											</a>
 										</div>
@@ -354,7 +355,7 @@
 						<div class="single-service wow fadeInUp">
 							<i class="fa fa-search-plus"></i>
 							<h4>SEO Expart</h4>
-							<P>Optimizing online content and strategies to enhance visibility and ranking on search engine results pages, driving organic traffic and growth.</P>
+							<P>Optimizing online content and strategies to enhance visibility and ranking on search engine results pages, driving organic traffic growth</P>
 						</div>
 					</div> <!-- End Col -->
 				</div>
@@ -481,89 +482,8 @@
 				</div>						
 			</div>	
 		<!-- END FOOTER -->
-		<!--Form Validation-->
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-    		document.getElementById('form').addEventListener('submit', function(event) {
-      		event.preventDefault();  // Prevent the default form submission
-
-        // Get form field values
-        const name = document.querySelector('input[name="username"]').value;
-        const email = document.querySelector('input[name="email"]').value;
-        const subject = document.querySelector('input[name="subject"]').value;
-        const message = document.querySelector('textarea[name="message"]').value;
-
-        // Basic form validation
-        if (!name || !email || !subject || !message) {
-            customAlert("All fields are required.", "error");
-            return;
-        } else if (!validateEmail(email)) {
-            customAlert("Please enter a valid email address.", "error");
-            return;
-        }
-
-        // Data to be sent to the Google Apps Script web app
-        const data = {
-            name: name,
-            email: email,
-            subject: subject,
-            message: message
-        };
-
-        // Replace 'YOUR_WEB_APP_URL' with your Google Apps Script web app URL
-        fetch('https://script.google.com/macros/s/AKfycbyYG-oqDBWplLBUukhETGd3GrA1hZuSwV2Vd1SPtv_ouuwW23EQekD_cmKmdJdJO3P-/exec', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: new URLSearchParams(data)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.result === "success") {
-                customAlert("Message sent successfully!", "success");
-                setTimeout(() => {
-                    
-                }, 2000);
-            } else {
-                customAlert("Error sending message: " + data.message, "error");
-            }
-        })
-        .catch(error => {
-            console.error("Error: ", error);
-            customAlert("Error: " + error.message, "error");
-        });
-    });
-
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-
-    function customAlert(message, type) {
-        const alertBox = document.createElement('div');
-        alertBox.className = custom-alert ${type};
-        alertBox.innerHTML = `
-            <span>${message}</span>
-            <button class="close-alert">&times;</button>
-        `;
-        document.body.appendChild(alertBox);
-
-        // Add event listener to close button
-        alertBox.querySelector('.close-alert').addEventListener('click', () => {
-            alertBox.remove();
-        });
-
-        setTimeout(() => {
-            alertBox.classList.add('fade-out');
-            alertBox.addEventListener('transitionend', () => {
-                alertBox.remove();
-            });
-        }, 3000);
-  	  }
-	});
-	</script>
 		<!--Script-->
+		<script src="validation.js"></script>
 		<script src="index.js"></script>
 		<!-- Start JQuery -->
 		<script src="js/jquery.min.js"></script>
@@ -574,7 +494,6 @@
 		<script src="js/jquery.inview.min.js"></script>
 		<script src="js/isotope.pkgd.min.js"></script>
 		<script src="js/animated-headline.js"></script>		
-		<script src="js/lightbox.min.js"></script>
 		<script src="js/slick-nav.js"></script>
 		<script src="js/form-contact.js"></script>
 		<script src="js/scrolltopcontrol.js"></script>
