@@ -31,6 +31,10 @@ const isValidEmail = email => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 };
+const isName = Name => {
+  const rename= /^[A-Za-z\s]+$/;
+  return rename.test(Name);//returns true if matched, vaidates for a-z and A-Z and white space
+};
 
 const validateInput = () => {
     const nameValue = username.value.trim();
@@ -40,6 +44,8 @@ const validateInput = () => {
 
     if (nameValue === '') {
         setError(username, 'Name is required');
+    } else if(!isName(nameValue)){
+        setError(username, 'Provide a valid name');
     } else {
         setSuccess(username);
     }
