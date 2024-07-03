@@ -9,10 +9,10 @@ document.getElementById('form').addEventListener('submit', function(event) {
     const message = document.querySelector('textarea[name="message"]').value;
     // Basic form validation
     if (!name || !email || !subject || !message) {
-        customAlert("All fields are required.", "error");
+        alert("All fields are required.", "error");
         return;
     } else if (!validateEmail(email)) {
-        customAlert("Please enter a valid email address.", "error");
+        alert("Please enter a valid email address.", "error");
         return;
     }
     // Data to be sent to the Google Apps Script web app
